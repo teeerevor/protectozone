@@ -1,0 +1,60 @@
+@charset "utf-8"
+
+@import normalize
+
+$poz-blue: #3853A4
+$poz-grey: #333
+
+body
+  background: #efefef
+  text-align: center
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-size: 1em
+  color: $poz-grey
+  max-width: 800px
+  margin: auto
+
+.logo img
+  margin-top: 6em
+
+h2
+  margin: 0
+
+p
+  margin: 3em 0
+  font-size: 2em
+  max-width: 600px
+  margin-left: auto
+  margin-right: auto
+  text-align: left
+  line-height: 1.5em
+
+a
+  color: $poz-blue
+  &:hover
+    color: darken($poz-blue, 10)
+
+.icon-email
+  width: 48px
+  margin-right: 20px
+.icon-mobile
+  width: 28px
+  margin-left: 10px
+  margin-right: 30px
+
+footer
+  text-align: left
+  display: inline-block
+  margin: auto
+  margin-bottom: 200px
+  a
+    display: flex
+    -webkit-align-items: center
+    align-items: center
+    font-size: 1.5em
+    color: $poz-grey
+    text-decoration: none
+    line-height: 2.5em
+    &:hover
+      color: $poz-blue
+      fill: $poz-blue
