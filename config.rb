@@ -22,6 +22,7 @@ page '/*.txt', layout: false
 configure :development do
   activate :livereload
 end
+activate :dotenv
 
 ###
 # Helpers
@@ -42,3 +43,17 @@ configure :build do
   # Minify Javascript on build
   # activate :minify_javascript
 end
+
+activate :s3_sync do |sync|
+  sync.bucket                     = ENV['aws_bucket']
+  sync.region                     = ENV['aws_region']
+  sync.aws_access_key_id          = ENV['aws_access_key_id']
+  sync.aws_secret_access_key      = ENV['aws_secret_access_key']
+  sync.prefer_gzip                = true
+  sync.path_style                 = true
+  sync.reduced_redundancy_storage = false
+  sync.acl                        = 'public-read'
+  sync.encryption                 = false
+  sync.after_build                = false
+end
+
